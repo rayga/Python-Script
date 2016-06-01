@@ -1,8 +1,21 @@
 Server Apache
 Enkripsi yang digunakan 
-Secure Protocol: TlSv1.2
+Server : instagramstatic-a.akamaihd.net | connect.facebook.net
+Menggunakan SSLv3-compatible ClientHello handshake 
+Server Penyimpanan Foto : scontent-sit4-1.cdninstagram.com
+
+#####connect.facebook.net:443, scontent-sit4-1.cdninstagram.com:443 
+Secure Protocol: TLSv1.2
 Cipher: Aes128 128bits
 Hash Algorithm: Sha1 160bits
 Key Exchange: ECDHE_RSA (0xae06) 256bits
-Server : instagramstatic-a.akamaihd.net
-Menggunakan SSLv3-compatible ClientHello handshake 
+
+#####instagramstatic-a.akamaihd.net:443
+Secure Protocol: TLSv1.2
+Cipher: Aes256 256bits
+Hash Algorithm: Sha1 160bits
+Key Exchange: ECDHE_RSA (0xae06) 256bits
+
+
+
+
