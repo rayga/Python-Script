@@ -1,0 +1,6 @@
+Server Apache
+Enkripsi yang digunakan 
+Secure Protocol: TlSv1.2
+Cipher: Aes128 128bits
+Hash Algorithm: Sha1 160bits
+Key Exchange: ECDHE_RSA (0xae06) 256bits
