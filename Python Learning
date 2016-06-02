@@ -1,2 +1,7 @@
 http://null-byte.wonderhowto.com/how-to/sploit-make-python-port-scanner-0161074/
+Fungsi scan_host yang terdapat pada script dari web diatas adalah untuk mengghubungkan ke port yang kita tuju.
+Karena dilakukan dengan mesin, maka untuk mengetahui apakah hal itu hidup atau mati, maka digunakan dengan bilangan biner 0 atau 1.
+Jika bilangan yang dikembalikan adalah 0, maka hidup. Jika tidak, maka hal sebaliknya, berarti port mati.
+
+http://bt3gl.github.io/black-hat-python-the-paramiko-module.html
 
