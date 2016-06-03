@@ -13,4 +13,5 @@ s.settimeout(5) #Jika tertulis 5, berarti durasinya adalah 5 Detik
 data, addr = s.recvfrom(1024)
 print "Received from ", addr
 print "Obtained ", data, " Bytes"
+s.close()
 
