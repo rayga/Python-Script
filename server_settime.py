@@ -1,3 +1,5 @@
+Perbedaan script python ini dengan script server sebelumny adalah pada code "s.settimeout()"
+
 __author__ = 'n4rut0'
 
 import socket
