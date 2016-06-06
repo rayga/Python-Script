@@ -23,7 +23,7 @@ for portlist in range(MIN_PORT, MAX_PORT):
     s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
     result = s.connect_ex((IP,portlist))
     if result == 0:
-        print portlist, ": OPEN"
+        print portlist, ": ", socket.getservbyport(portlist), " OPEN"
     s.close()
 
 sys.exit()
