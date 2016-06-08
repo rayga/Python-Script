@@ -35,10 +35,16 @@ s.close()
 import socket
 import struct
 import binascii
+
 s = socket.socket(socket.PF_PACKET, socket.SOCK_RAW, socket.ntohs(0x800))
-print "-"*130
-print "|\tDest Mac\t|\tSrc Mac \t|\tSrc IP  \t|  Dest IP \t|\tSrc Port\t|\tDest Port\t|"
-print "-"*130
+
+
+
+
+
+print "-"*137
+print "|\tDest Mac\t|\tSrc Mac \t|\t\tSrc IP <--> Dest IP \t\t|\tSrc Port <--> Dest Port \t|"
+print "-"*137
 while True:
 	pkt = s.recvfrom(2048)
 	ethead = pkt[0][0:14]
@@ -48,12 +54,14 @@ while True:
 	tcpheader = pkt[0][34:54]
 	tcp_hdr = struct.unpack("!HH9ss6s",tcpheader)
 
-	print "|\t",binascii.hexlify(eth[0]),"\t|\t",binascii.hexlify(eth[1]),"\t|\t",socket.inet_ntoa(ip_hdr[1]),"\t",socket.inet_ntoa(ip_hdr[2]),"\t\t",tcp_hdr[0],"\t\t" ,tcp_hdr[1],"\t"
+	print "|\t",binascii.hexlify(eth[0]),"\t|\t",binascii.hexlify(eth[1]),"\t|\t",socket.inet_ntoa(ip_hdr[1]),"<-->",socket.inet_ntoa(ip_hdr[2]),"\t\t","   ",tcp_hdr[0],"<-->",tcp_hdr[1],"\t"
 	
 
 	
 		
 	
+
+
 
 
 
