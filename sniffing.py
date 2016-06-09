@@ -38,10 +38,6 @@ import binascii
 
 s = socket.socket(socket.PF_PACKET, socket.SOCK_RAW, socket.ntohs(0x800))
 
-
-
-
-
 print "-"*137
 print "|\tDest Mac\t|\tSrc Mac \t|\t\tSrc IP <--> Dest IP \t\t|\tSrc Port <--> Dest Port \t|"
 print "-"*137
