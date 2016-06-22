@@ -26,6 +26,11 @@ ip1 = IP(dst=ip)
 tcp1 = TCP(sport =12345, dport=port, flags = flag, seq=1234)
 packet = ip1/tcp1
 p = sr1(packet)
+if flag == "S" or flag == "s":
+  tcp2 = TCP(sport=12345, dport=port, flags="R", seq=1234)
+  packet1 = ip1/tcp2
+  p1 = sr1(packet1)
+  p1.show()
 p.show()
 #p.summary()
 
